@@ -14,7 +14,7 @@ public class OPItemsRemoverPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        new Metrics(this, 21741);
+        new Metrics(this, 21798);
         saveDefaultConfig();
 
         getServer().getPluginManager().registerEvents(new OPItemsRemoverListener(), this);
