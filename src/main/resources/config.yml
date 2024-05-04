@@ -1,0 +1,13 @@
+debug: false
+
+# Items to disable
+# A list of string as define here https://jd.papermc.io/folia/1.20/org/bukkit/Material.html
+# Examples:
+# In compact format:
+# disabledItems: ["WITHER_SKELETON_SKULL", "WITCH_SPAWN_EGG"]
+# Or in long format:
+# disabledItems:
+# - "WITHER_SKELETON_SKULL"
+# - "WITCH_SPAWN_EGG"
+
+disabledItems: []
