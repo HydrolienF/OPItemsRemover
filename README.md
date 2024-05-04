@@ -1,5 +1,5 @@
-[download]: https://img.shields.io/github/downloads/HydrolienF/PotionEffectsRemover/total
-[downloadLink]: https://hangar.papermc.io/Hydrolien/PotionEffectsRemover
+[download]: https://img.shields.io/github/downloads/HydrolienF/OPItemsRemover/total
+[downloadLink]: https://hangar.papermc.io/Hydrolien/OPItemsRemover
 [discord-shield]: https://img.shields.io/discord/728592434577014825?label=discord
 [discord-invite]: https://discord.gg/RPNbtRSFqG
 
