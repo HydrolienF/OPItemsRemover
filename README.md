@@ -6,7 +6,7 @@
 [ ![download][] ][downloadLink]
 [ ![discord-shield][] ][discord-invite]
 
-[**Discord**](discord-invite) | [**Hangar**](https://hangar.papermc.io/Hydrolien/OPItemsRemover) | [**GitHub**](https://github.com/Hydrolien/OPItemsRemover)
+[**Discord**](discord-invite) | [**Hangar**](https://hangar.papermc.io/Hydrolien/OPItemsRemover) | [**GitHub**](https://github.com/HydrolienF/OPItemsRemover)
 
 # OPItemRemover
 Minecraft plugin to disable some potion effects.
