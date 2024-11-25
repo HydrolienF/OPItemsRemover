@@ -26,7 +26,7 @@ public class OPItemsRemoverPlugin extends JavaPlugin {
     @Override
     public void reloadConfig() {
         super.reloadConfig();
-        disabledItems = getConfig().getStringList("disabledItems").stream().map(Material::valueOf).toList();
+        disabledItems = getConfig().getStringList("disabledItems").stream().map(String::toUpperCase).map(Material::valueOf).toList();
         for (Player player : getServer().getOnlinePlayers())
             Remover.removeOPItemsFromPlayer(player);
     }
