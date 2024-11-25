@@ -6,6 +6,8 @@
 [ ![download][] ][downloadLink]
 [ ![discord-shield][] ][discord-invite]
 
+[**Discord**](discord-invite) | [**Hangar**](https://hangar.papermc.io/Hydrolien/OPItemsRemover) | [**GitHub**](https://github.com/Hydrolien/OPItemsRemover)
+
 # OPItemRemover
 Minecraft plugin to disable some potion effects.
 
@@ -25,4 +27,4 @@ Then you need an 1.20 Minecraft server with PaperMc or a fork to run it.
 
 
 ## Statistics
-[![bStats Graph Data](https://bstats.org/signatures/bukkit/OPItemRemover.svg)](https://bstats.org/plugin/bukkit/OPItemRemover/21741)
+[![bStats Graph Data](https://bstats.org/signatures/bukkit/OPItemRemover.svg)](https://bstats.org/plugin/bukkit/OPItemRemover/21798)
