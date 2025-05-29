@@ -9,5 +9,7 @@ import co.aikar.commands.annotation.Subcommand;
 @CommandPermission("opitemsremover.admin")
 public class OPItemsRemoverCommand extends BaseCommand {
     @Subcommand("reload")
-    public void onReload() { OPItemsRemoverPlugin.getInstance().reloadConfig(); }
+    public void onReload() {
+        OPItemsRemoverPlugin.getInstance().reloadConfig();
+    }
 }
