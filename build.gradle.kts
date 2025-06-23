@@ -11,7 +11,7 @@ plugins {
 }
 
 group="fr.formiko.opitemsremover"
-version="1.1.3"
+version="1.1.4"
 description="Disable some items."
 java.sourceCompatibility = JavaVersion.VERSION_21
 var mainMinecraftVersion = "1.21.5"
