@@ -16,6 +16,8 @@ Items can be disabled in the config, by there [Material](https://jd.papermc.io/p
 For example to disable wither head and witch egg:
 `disabledItems: ["WITHER_SKELETON_SKULL", "WITCH_SPAWN_EGG"]`
 
+Disabled item will be removed when player try to collect it by picking it up from the ground, or from any containers or when a player log on.
+
 Support **Paper** forks including **Folia** for version 1.20 to latest. (See version compatibility in releases)
 Older version than 1.20 won't be supported.
 
