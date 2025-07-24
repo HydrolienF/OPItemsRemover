@@ -9,9 +9,16 @@
 [**Discord**](discord-invite) | [**Hangar**](https://hangar.papermc.io/Hydrolien/OPItemsRemover) | [**Modrinth**](https://modrinth.com/plugin/opitemsremover) | [**GitHub**](https://github.com/HydrolienF/OPItemsRemover)
 
 # OPItemRemover
-Minecraft plugin to disable some potion effects.
+Minecraft plugin to disable some minecraft items.
 
-Support **Paper** forks including **Folia** for version 1.20 to the last one. (See version compatibility in releases)
+Items can be disabled in the config, by there [Material](https://jd.papermc.io/paper/1.21.7/org/bukkit/Material.html). The config can be reload with `/opirc reload` to change the disabled item without restarting the server.
+
+For example to disable wither head and witch egg:
+`disabledItems: ["WITHER_SKELETON_SKULL", "WITCH_SPAWN_EGG"]`
+
+Disabled item will be removed when player try to collect it by picking it up from the ground, or from any containers or when a player log on.
+
+Support **Paper** forks including **Folia** for version 1.20 to latest. (See version compatibility in releases)
 Older version than 1.20 won't be supported.
 
 ## Install
