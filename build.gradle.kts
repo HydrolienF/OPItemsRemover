@@ -11,7 +11,7 @@ plugins {
 }
 
 group="fr.formiko.opitemsremover"
-version="1.1.10"
+version="1.2.0"
 description="Disable some items."
 java.sourceCompatibility = JavaVersion.VERSION_21
 var mainMinecraftVersion = "1.21.11"
@@ -93,10 +93,8 @@ tasks {
 @Suppress("UnstableApiUsage")
 tasks.withType(xyz.jpenilla.runtask.task.AbstractRun::class) {
     javaLauncher = javaToolchains.launcherFor {
-        vendor = JvmVendorSpec.JETBRAINS
         languageVersion = JavaLanguageVersion.of(21)
     }
-    jvmArgs("-XX:+AllowEnhancedClassRedefinition")
 }
 
 tasks.register("echoVersion") {

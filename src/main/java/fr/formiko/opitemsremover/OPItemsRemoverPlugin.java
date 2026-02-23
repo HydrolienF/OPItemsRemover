@@ -1,14 +1,16 @@
 package fr.formiko.opitemsremover;
 
 import co.aikar.commands.PaperCommandManager;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class OPItemsRemoverPlugin extends JavaPlugin {
-    private Collection<Material> disabledItems;
+    private Collection<Material> disabledItems = Collections.emptyList();
 
     public static OPItemsRemoverPlugin getInstance() {
         return JavaPlugin.getPlugin(OPItemsRemoverPlugin.class);
@@ -23,6 +25,13 @@ public class OPItemsRemoverPlugin extends JavaPlugin {
 
         PaperCommandManager manager = new PaperCommandManager(this);
         manager.registerCommand(new OPItemsRemoverCommand());
+
+        manager.getCommandCompletions().registerAsyncCompletion("disabledItems",
+                context -> getDisabledItems().stream().map(Material::name).toList());
+
+        manager.getCommandCompletions().registerCompletion("disableableItems",
+                context -> Arrays.stream(Material.values()).filter(material -> !getDisabledItems().contains(material))
+                        .map(Material::name).toList());
     }
 
     @Override
@@ -33,6 +42,7 @@ public class OPItemsRemoverPlugin extends JavaPlugin {
         for (Player player : getServer().getOnlinePlayers()) {
             Remover.removeOPItemsFromPlayer(player);
         }
+        log("Config reloaded");
     }
 
     public Collection<Material> getDisabledItems() {
