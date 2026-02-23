@@ -13,7 +13,7 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 
-@CommandAlias("opItemRemoverCommand|opirc")
+@CommandAlias("opItemRemoverCommand|opirc|oir")
 @CommandPermission("opitemsremover.admin")
 public class OPItemsRemoverCommand extends BaseCommand {
     @Subcommand("reload")
@@ -34,8 +34,8 @@ public class OPItemsRemoverCommand extends BaseCommand {
                 .append(Component.text(items, NamedTextColor.WHITE)));
     }
 
-    @Subcommand("add")
-    @CommandCompletion("@materials @empty")
+    @Subcommand("disable")
+    @CommandCompletion("@disableableItems @empty")
     public void onAdd(CommandSender sender, String materialName) {
         Material material = Material.matchMaterial(materialName);
         if (material == null) {
@@ -57,11 +57,11 @@ public class OPItemsRemoverCommand extends BaseCommand {
         plugin.saveConfig();
         plugin.reloadConfig();
         sender.sendMessage(Component.text("Item added to disabled items list: ", NamedTextColor.GREEN)
-            .append(Component.text(matName, NamedTextColor.WHITE)));
+                .append(Component.text(matName, NamedTextColor.WHITE)));
     }
 
-    @Subcommand("remove")
-    @CommandCompletion("@disabledItems")
+    @Subcommand("enable")
+    @CommandCompletion("@disabledItems @empty")
     public void onRemove(CommandSender sender, String materialName) {
         Material material = Material.matchMaterial(materialName);
         if (material == null) {
@@ -74,8 +74,7 @@ public class OPItemsRemoverCommand extends BaseCommand {
         List<String> disabledList = plugin.getConfig().getStringList("disabledItems");
         String matName = material.name();
         if (!disabledList.contains(matName)) {
-            sender.sendMessage(Component.text(matName + " is not in the disabled items list.",
-                    NamedTextColor.YELLOW));
+            sender.sendMessage(Component.text(matName + " is not in the disabled items list.", NamedTextColor.YELLOW));
             return;
         }
 
@@ -84,6 +83,6 @@ public class OPItemsRemoverCommand extends BaseCommand {
         plugin.saveConfig();
         plugin.reloadConfig();
         sender.sendMessage(Component.text("Item removed from disabled items list: ", NamedTextColor.GREEN)
-            .append(Component.text(matName, NamedTextColor.WHITE)));
+                .append(Component.text(matName, NamedTextColor.WHITE)));
     }
 }
