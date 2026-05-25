@@ -1,3 +1,6 @@
+# 1.2.1
+Support from 1.20 to 26.1.2.
+
 # 1.2.0
 New commands for list disabled, disable & enable items.
 
