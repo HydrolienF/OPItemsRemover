@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class OPItemsRemoverPlugin extends JavaPlugin {
+    public static final String DISABLED_ITEMS_STRING = "disabledItems";
     private Collection<Material> disabledItems = Collections.emptyList();
 
     public static OPItemsRemoverPlugin getInstance() {
@@ -37,7 +38,7 @@ public class OPItemsRemoverPlugin extends JavaPlugin {
     @Override
     public void reloadConfig() {
         super.reloadConfig();
-        disabledItems = getConfig().getStringList("disabledItems").stream().map(String::toUpperCase)
+        disabledItems = getConfig().getStringList(DISABLED_ITEMS_STRING).stream().map(String::toUpperCase)
                 .map(Material::valueOf).toList();
         for (Player player : getServer().getOnlinePlayers()) {
             Remover.removeOPItemsFromPlayer(player);
