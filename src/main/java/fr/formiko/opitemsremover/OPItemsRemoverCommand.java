@@ -16,6 +16,7 @@ import org.bukkit.command.CommandSender;
 @CommandAlias("opItemRemoverCommand|opirc|oir")
 @CommandPermission("opitemsremover.admin")
 public class OPItemsRemoverCommand extends BaseCommand {
+    private static final String disabledItemsString = "disabledItems";
     @Subcommand("reload")
     public void onReload(CommandSender sender) {
         OPItemsRemoverPlugin.getInstance().reloadConfig();
@@ -45,7 +46,7 @@ public class OPItemsRemoverCommand extends BaseCommand {
         }
 
         OPItemsRemoverPlugin plugin = OPItemsRemoverPlugin.getInstance();
-        List<String> disabledList = plugin.getConfig().getStringList("disabledItems");
+        List<String> disabledList = plugin.getConfig().getStringList(disabledItemsString);
         String matName = material.name();
         if (disabledList.contains(matName)) {
             sender.sendMessage(Component.text(matName + " is already disabled.", NamedTextColor.YELLOW));
@@ -53,7 +54,7 @@ public class OPItemsRemoverCommand extends BaseCommand {
         }
 
         disabledList.add(matName);
-        plugin.getConfig().set("disabledItems", disabledList);
+        plugin.getConfig().set(disabledItemsString, disabledList);
         plugin.saveConfig();
         plugin.reloadConfig();
         sender.sendMessage(Component.text("Item added to disabled items list: ", NamedTextColor.GREEN)
@@ -71,7 +72,7 @@ public class OPItemsRemoverCommand extends BaseCommand {
         }
 
         OPItemsRemoverPlugin plugin = OPItemsRemoverPlugin.getInstance();
-        List<String> disabledList = plugin.getConfig().getStringList("disabledItems");
+        List<String> disabledList = plugin.getConfig().getStringList(disabledItemsString);
         String matName = material.name();
         if (!disabledList.contains(matName)) {
             sender.sendMessage(Component.text(matName + " is not in the disabled items list.", NamedTextColor.YELLOW));
@@ -79,7 +80,7 @@ public class OPItemsRemoverCommand extends BaseCommand {
         }
 
         disabledList.remove(matName);
-        plugin.getConfig().set("disabledItems", disabledList);
+        plugin.getConfig().set(disabledItemsString, disabledList);
         plugin.saveConfig();
         plugin.reloadConfig();
         sender.sendMessage(Component.text("Item removed from disabled items list: ", NamedTextColor.GREEN)
