@@ -11,7 +11,7 @@ plugins {
 }
 
 group="fr.formiko.opitemsremover"
-version="1.2.2"
+version="1.3.0"
 description="Disable some items."
 val mainMinecraftVersion = "1.21.11" // 26.1.2
 val supportedMinecraftVersions = "1.20 - 26.1.2"
