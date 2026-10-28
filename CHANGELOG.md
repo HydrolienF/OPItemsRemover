@@ -1,3 +1,6 @@
+# 1.3.1
+Support from 1.20 to 26.3.
+
 # 1.3.0
 Remove item from InventoryMoveItemEvent to include not moved by players action as hoppers.
 
